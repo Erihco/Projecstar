@@ -1,0 +1,145 @@
+/* Reseta margens e faz o fundo escuro */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #001848, #000000); /* Fundo do céu */
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites da tela */
+}
+
+/* Contêiner para as estrelas */
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: starryBackground 60s infinite linear;
+}
+
+/* Estilo das estrelas grandes */
+.star.large {
+    position: absolute;
+    width: 12px; /* Estrela maior */
+    height: 12px; /* Estrela maior */
+    background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0.3));
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    animation: twinkle 2s infinite alternate, moveStars 30s linear infinite;
+}
+
+/* Estilo das estrelas pequenas */
+.star.small {
+    position: absolute;
+    width: 6px; /* Estrela menor */
+    height: 6px; /* Estrela menor */
+    background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0.5));
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    animation: twinkle 3s infinite alternate, moveStars 40s linear infinite;
+}
+
+/* Animação de movimento das estrelas */
+@keyframes moveStars {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Animação de brilho das estrelas */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Efeito de fundo com estrelas cadentes */
+@keyframes starryBackground {
+    0% {
+        background: linear-gradient(to bottom, #001848, #000000);
+    }
+    50% {
+        background: linear-gradient(to bottom, #2f4f6f, #000000);
+    }
+    100% {
+        background: linear-gradient(to bottom, #001848, #000000);
+    }
+}
+
+/* Caixa de mensagem com borda arredondada e sombra */
+#message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 350px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: popIn 0.8s ease-out;
+}
+
+/* Efeito de animação de entrada */
+@keyframes popIn {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Estilo da imagem dentro da caixa de mensagem */
+#message-box img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Estilo do botão de fechar */
+#close-message {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #ff7f50;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+#close-message:hover {
+    background: #ff4500;
+    transform: scale(1.1);
+}
+
+/* Botão de som ambiente com animação e efeito de hover */
+.play-sound-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 2000; /* Garantir que o botão fique acima de outros elementos */
+}
+
+.play-sound-btn:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transform: scale(1.2);
+}

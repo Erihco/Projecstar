@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Estrelas</title>
+    <link rel="stylesheet" href="designer.css"> <!-- Referência ao CSS externo -->
+</head>
+<body>
+    <!-- Som Ambiente -->
+    <audio id="ambient-sound" loop>
+        <source src="Fotos/Audio/New Home (Slowed)(MP3_160K).mp3" type="audio/mp3">
+        Seu navegador não suporta áudio.
+    </audio>
+    
+   <!-- Botão de som ambiente com id para estilizar -->
+   <button id="play-sound" class="play-sound-btn">🔊</button>
+
+    <!-- Efeito Sonoro para Estrelas -->
+    <audio id="star-sound">
+        <source src="Fotos/Audio/Twinkling Stars Sound Effect(MP3_160K).mp3" type="audio/mp3">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="sky">
+        <!-- Estrelas maiores -->
+        <div class="star large" style="top: 10%; left: 20%;"></div>
+        <div class="star large" style="top: 15%; left: 40%;"></div>
+        <div class="star large" style="top: 20%; left: 60%;"></div>
+        <div class="star large" style="top: 25%; left: 80%;"></div>
+        <div class="star large" style="top: 35%; left: 30%;"></div>
+        <div class="star large" style="top: 45%; left: 50%;"></div>
+        <div class="star large" style="top: 50%; left: 70%;"></div>
+        <div class="star large" style="top: 60%; left: 20%;"></div>
+        <div class="star large" style="top: 70%; left: 90%;"></div>
+        <div class="star large" style="top: 80%; left: 40%;"></div>
+        <div class="star large" style="top: 90%; left: 60%;"></div>
+
+        <!-- Estrelas menores -->
+        <div class="star small" style="top: 5%; left: 5%;"></div>
+        <div class="star small" style="top: 10%; left: 15%;"></div>
+        <div class="star small" style="top: 30%; left: 70%;"></div>
+        <div class="star small" style="top: 50%; left: 80%;"></div>
+        <div class="star small" style="top: 70%; left: 10%;"></div>
+        <div class="star small" style="top: 75%; left: 50%;"></div>
+        <div class="star small" style="top: 85%; left: 80%;"></div>
+        <div class="star small" style="top: 40%; left: 90%;"></div>
+        <div class="star small" style="top: 60%; left: 30%;"></div>
+        <div class="star small" style="top: 55%; left: 10%;"></div>
+        <div class="star small" style="top: 45%; left: 5%;"></div>
+    </div>
+
+    <div id="message-box" class="hidden">
+        <div id="content">
+            <img id="photo" src="" alt="Foto" />
+            <p id="message"></p>
+        </div>
+        <button id="close-message">Fechar</button>
+    </div>
+
+    <script src="Animação.js"></script> <!-- Referência ao JS externo -->
+</body>
+</html>
